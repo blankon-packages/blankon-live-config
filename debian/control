@@ -1,0 +1,17 @@
+Source: blankon-live-config
+Section: misc
+Priority: optional
+Maintainer: BlankOn Developers <blankon-dev@googlegroups.com> 
+Build-Depends: debhelper (>= 8)
+Standards-Version: 3.9.2
+Vcs-Browser: https://bitbucket.org/mdamt/blankon-live-config
+Vcs-Git: git://bitbucket.org/mdamt/blankon-live-config.git
+
+Package: blankon-live-config
+Architecture: all
+Depends: ${misc:Depends}, live-config, lightdm
+Description: BlankON Configuration Scripts for Debian Live 
+ live-config contains the scripts needed to perform late-userspace actions
+ on Debian Live systems.
+ .
+ This package contains the BlankOn specific scripts.

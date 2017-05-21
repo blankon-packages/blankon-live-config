@@ -1,0 +1,33 @@
+#!/bin/sh
+
+Noauth ()
+{
+	# Checking if already configured
+	if  [ -e /var/lib/live/config/noauth ]
+	then
+		return
+        fi
+        # Reading kernel command line
+        for _PARAMETER in ${_CMDLINE}
+        do
+        case "${_PARAMETER}" in
+            live-config.username=*|username=*)
+                LIVE_USERNAME="${_PARAMETER#*username=}"
+                ;;
+        esac
+        done
+
+	echo -n " no auth"
+
+	Configure_noauth
+}
+
+Configure_noauth ()
+{
+    rm -f /home/${LIVE_USERNAME}/.Xauthority
+
+	# Creating state file
+	touch /var/lib/live/config/noauth
+}
+
+Noauth

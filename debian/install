@@ -1,0 +1,2 @@
+scripts/900-noauth			/lib/live/config
+#pam.d/lightdm-autologin		/etc/pam.d/
